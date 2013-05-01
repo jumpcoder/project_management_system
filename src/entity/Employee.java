@@ -1,9 +1,13 @@
 package entity;
 
+import java.util.List;
+
 public class Employee {
 	private int id;
 	private String username;
 	private String password;
+	private List<Project> projects;
+	
 	public int getId() {
 		return id;
 	}
@@ -21,5 +25,11 @@ public class Employee {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public List<Project> getProjects() {
+		return projects;
+	}
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 }

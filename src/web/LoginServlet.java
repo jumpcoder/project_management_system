@@ -25,11 +25,9 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		EmployeeService employeeService = new EmployeeService();
-		Employee employee = employeeService.login(username, password);
+		Employee employee = EmployeeService.login(username, password);
 		if(employee != null){
 			HttpSession session = request.getSession();
-			//
 			session.setAttribute("employee", employee);
 			response.sendRedirect("projects.do");
 		}else{

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,24 +23,28 @@
 				<div class="page-header">
 	          		<h2>项目列表</h2>
 	          	</div>
-	          	<a href="new_project.html" class="btn btn-success"><i class="icon-plus icon-white"></i>开始一个新项目</a>
-			    <ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
-					<li class="active">
-						<a href="project.html"><i class="icon-th"></i>新Apple总部项目</a>
-					</li>
-				</ul>
-				<div class="wall">
-					<p>北京市公安局有关负责人表示，利用互联网编造、传播谣言的行为严重扰乱社会秩序、影响社会稳定、危害社会诚信，公安机关对此将依法查处。希望广大网民自觉遵守法律法规，不信谣、不传谣，发现谣言及时举报，共同维护健康的网络环境和良好的社会秩序。</p>
-				</div>
-
-				<ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
-					<li class="active">
-						<a href="javascript:;"><i class="icon-th"></i>Google IO 2012项目</a>
-					</li>
-				</ul>
-				<div class="wall">
-					<p>北京市公安局有关负责人表示，利用互联网编造、传播谣言的行为严重扰乱社会秩序、影响社会稳定、危害社会诚信，公安机关对此将依法查处。希望广大网民自觉遵守法律法规，不信谣、不传谣，发现谣言及时举报，共同维护健康的网络环境和良好的社会秩序。</p>
-				</div>
+	          	<a href="create_project.do" class="btn btn-success"><i class="icon-plus icon-white"></i>创建一个新项目</a>
+			    <c:choose>
+				    <c:when test = "${empty employee.projects}">
+				    <ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
+						<li class="active">
+							<div>无项目</div>
+						</li>
+					</ul>			    	
+				    </c:when>
+				    <c:otherwise>
+				    	<c:forEach var = "project" items = "${employee.projects }">
+				    	<ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
+							<li class="active">
+								<a href="project.do?id=${project.id }"><i class="icon-th"></i>${project.name }</a>
+							</li>
+						</ul>	
+						<div class="wall">
+							<p>${project.describle }</p>
+						</div>
+				    	</c:forEach>
+				    </c:otherwise>
+			    </c:choose>
 			</div>
 			<div class="span3">	
 			</div>

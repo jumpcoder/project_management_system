@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-    
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,38 +19,43 @@
 	<div class="container">
 		<div class="row">
 			<div class="span9">
-				<form class="form-horizontal">
+				<form class="form-horizontal" action = "create_project.do" method = "post">
 					<fieldset>
-						<legend>开始一个新项目</legend>
+						<legend>创建一个新项目</legend>
 						<div class="control-group">
 							<label class="control-label" for="input01">项目名称</label>
 							<div class="controls">
-								<input type="text" class="span5" id="input01" x-webkit-speech="undefined">
+								<input type="text" class="span5" id="input01" name = "name" x-webkit-speech="undefined">
 								<p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="input01">项目描述</label>
 							<div class="controls">
-								<textarea class="span5" rows="4"></textarea>
+								<textarea class="span5" rows="4" name = "describle"></textarea>
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="multiSelect">负责人</label>
 							<div class="controls">
-								<select id="multiSelect">
-									<option></option>
-									<option>Tom</option>
-									<option>Jerry</option>
-									<option>Rose</option>
-									<option>Adsen</option>
+								<select id="multiSelect" name = "manager">
+									<c:choose>
+										<c:when test = "${empty employeeList }">
+										<option>无用户</option>
+										</c:when>
+										<c:otherwise>
+											<c:forEach var = "employee" items = "employeeList">
+											<option>${employee.name }</option>
+											</c:forEach>
+										</c:otherwise>
+									</c:choose>
 								</select>
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="input01">项目成员</label>
 							<div class="controls">
-								<input type="text" class="span5" id="input01" x-webkit-speech="undefined">
+								<input type="text" class="span5" id="input01" x-webkit-speech="undefined" name = "members">
 							</div>
 						</div>
 				  

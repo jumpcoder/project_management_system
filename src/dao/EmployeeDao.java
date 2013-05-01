@@ -18,7 +18,7 @@ public class EmployeeDao extends Dao<Employee>{
 	}
 	
 	public Employee findUserByUsername(String username) {
-		String sql = "select id, username, password from user where id = ?";
+		String sql = "select id, username, password from employee where username = ?";
 		
 		try {
 			this.setSql(sql, username);
@@ -29,6 +29,17 @@ public class EmployeeDao extends Dao<Employee>{
 				return employeeList.get(0);
 			}
 		} catch (DaoException e) {			
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public List<Employee> findAllEmployee() {
+		String sql = "select id, username from employee ";
+		try {
+			this.setSql(sql);
+			return this.query();
+		} catch (DaoException e) {
 			e.printStackTrace();
 		}
 		return null;
