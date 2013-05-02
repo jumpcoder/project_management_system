@@ -37,8 +37,14 @@ public class EmployeeProjectDao extends Dao{
 		}
 		return null;
 	}
-	public void addEmployeeProject(int projectId, int employeeId, String post) {
-		// TODO Auto-generated method stub
-		
+	public void addEmployeeProject(int employeeId, int projectId, String post) {
+		String sql = "";
+		sql = "insert into employee_project(employee_id, project_id, post) values(?,?,?)";
+		try{
+			this.setSql(sql, employeeId, projectId, post);
+			this.update();
+		}catch(DaoException e){
+			e.printStackTrace();
+		}
 	}
 }

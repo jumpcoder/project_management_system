@@ -21,7 +21,7 @@ public class ProjectDao extends Dao<Project>{
 
 	public int addProject(String name, String describle) {
 		try {
-			String sql = "select max(id) as id '' as name '' as describle '' as create_time from project";
+			String sql = "select max(id) as id, '' as name, '' as describle, '' as create_time from project";
 			this.setSql(sql);
 			List<Project> projectList = this.query();
 			int projectId = projectList.get(0).getId();

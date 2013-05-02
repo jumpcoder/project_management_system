@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
 	<style type="text/css">
 		body{
-			background-image:url(img/bg.png);
+			background-image:url(static/img/bg.png);
 		}
 		#container{
 			margin-top:100px;
