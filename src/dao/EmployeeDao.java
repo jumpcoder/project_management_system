@@ -9,7 +9,6 @@ public class EmployeeDao extends Dao<Employee>{
 	protected Employee mapToObject() throws SQLException, DaoException{
 		Employee employee = new Employee();
 		ResultSet rs = getResultSet();
-
 		employee.setId(rs.getInt("id"));
 		employee.setUsername(rs.getString("username"));
 		employee.setPassword(rs.getString("password"));
@@ -35,7 +34,7 @@ public class EmployeeDao extends Dao<Employee>{
 	}
 
 	public List<Employee> findAllEmployee() {
-		String sql = "select id, username from employee ";
+		String sql = "select id, username, 0 as password from employee ";
 		try {
 			this.setSql(sql);
 			return this.query();

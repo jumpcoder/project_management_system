@@ -21,8 +21,7 @@ public class CreateProjectServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Employee> employeeList = new EmployeeDao().findAllEmployee();
-		HttpSession session = request.getSession();
-		session.setAttribute("employeeList", employeeList);
+		request.setAttribute("employeeList", employeeList);
 		request.getRequestDispatcher("WEB-INF/views/projects/create_project.jsp").forward(request, response);
 	}
 

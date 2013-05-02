@@ -44,8 +44,8 @@
 										<option>无用户</option>
 										</c:when>
 										<c:otherwise>
-											<c:forEach var = "employee" items = "employeeList">
-											<option>${employee.name }</option>
+											<c:forEach var = "employee" items = "${employeeList}">
+											<option>${employee.username }</option>
 											</c:forEach>
 										</c:otherwise>
 									</c:choose>
