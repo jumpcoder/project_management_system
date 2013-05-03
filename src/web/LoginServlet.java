@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 		Employee employee = EmployeeService.login(username, password);
 		if(employee != null){
 			HttpSession session = request.getSession();
-			session.setAttribute("employee", employee);
+			session.setAttribute("employeeId", employee.getId());
 			response.sendRedirect("projects.do");
 		}else{
 			response.sendRedirect("login.do");

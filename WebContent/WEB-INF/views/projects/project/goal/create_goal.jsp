@@ -21,20 +21,20 @@
 	<div class="container">
 	  <div class="row">
 		<div class="span9">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action = "create_goal.do" method = "post">
         <fieldset>
           <legend>添加一个新目标</legend>
           <div class="control-group">
             <label class="control-label" for="input01">目标名称</label>
             <div class="controls">
-              <input type="text" class="span5" id="input01" x-webkit-speech="undefined">
+              <input type="text" class="span5" id="input01" x-webkit-speech="undefined" name = "name">
               <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
             </div>
           </div>
           <div class="control-group">
             <label class="control-label" for="input01">目标描述</label>
             <div class="controls">
-              <textarea class="span5" rows="8"></textarea>
+              <textarea class="span5" rows="8" name = "describle"></textarea>
             </div>
           </div>
           

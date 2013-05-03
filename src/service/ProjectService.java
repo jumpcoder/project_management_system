@@ -7,9 +7,17 @@ import java.util.regex.Pattern;
 
 import dao.EmployeeProjectDao;
 import dao.ProjectDao;
+import entity.Employee;
+import entity.Project;
 
 public class ProjectService {
-
+	
+	public static List<Project> findProjects(int employeeId) {
+		List<Project> projectList = new EmployeeProjectDao().findProjectsByEmployeeId(employeeId);
+		return projectList;
+		
+	}
+	
 	public static void createProject(String name, String describle, String manager,
 			String members) {
 		//在project表中新建一个project

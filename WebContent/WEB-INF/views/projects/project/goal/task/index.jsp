@@ -27,14 +27,14 @@
 				<ul class="nav nav-list">
 				  <li class="nav-header">新Apple总部项目</li>
 				  <li class="divider"></li>
-				  <li><a href="#"><i class="icon-home"></i>最新动态</a></li>
+				  <li><a href="news.do"><i class="icon-home"></i>最新动态</a></li>
 				  <li class="active">
-					<a href="#"><i class="icon-white icon-flag"></i>目标</a>
+					<a href="goal.do"><i class="icon-white icon-flag"></i>目标</a>
 				  </li>
-				  <li><a href="#"><i class="icon-folder-open"></i>资料库</a></li>
-				  <li><a href="#"><i class="icon-file"></i>文件共享</a></li>
-				  <li><a href="#"><i class="icon-user"></i>联系人</a></li>
-				  <li><a href="#"><i class="icon-fire"></i>想法</a></li>
+				  <li><a href="resource.do"><i class="icon-folder-open"></i>资料库</a></li>
+				  <li><a href="file.do"><i class="icon-file"></i>文件共享</a></li>
+				  <li><a href="contact.do"><i class="icon-user"></i>联系人</a></li>
+				  <li><a href="idea.do"><i class="icon-fire"></i>想法</a></li>
 				  <li><a href="#"><i class="icon-warning-sign"></i>Bug</a></li>
 				  <li><a href="#"><i class="icon-cog"></i>项目设置</a></li>
 				</ul>
@@ -47,7 +47,7 @@
 					<a href="javascript:;"><i class="icon-th"></i>目标1</a>
 				</li>
 				<li style="float:right">
-					<i class="icon-edit"></i><a href="edit_goal.html" class="link-black">编辑</a>
+					<i class="icon-edit"></i><a href="edit_goal.do" class="link-black">编辑</a>
 				</li>
 			</ul>
 			<div class="wall">

@@ -1,4 +1,4 @@
-package web;
+package web.idea;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,18 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/project.do")
-public class ProjectServlet extends HttpServlet {
+@WebServlet("/idea.do")
+public class IdeaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int projectId = Integer.parseInt(request.getParameter("id"));
-		request.getRequestDispatcher("WEB-INF/views/projects/project/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/projects/project/idea/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 	}
 
 }

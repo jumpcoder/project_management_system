@@ -25,7 +25,7 @@
 	          	</div>
 	          	<a href="create_project.do" class="btn btn-success"><i class="icon-plus icon-white"></i>创建一个新项目</a>
 			    <c:choose>
-				    <c:when test = "${empty employee.projects}">
+				    <c:when test = "${empty projectList}">
 				    <ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
 						<li class="active">
 							<div>无项目</div>
@@ -33,7 +33,7 @@
 					</ul>			    	
 				    </c:when>
 				    <c:otherwise>
-				    	<c:forEach var = "project" items = "${employee.projects }">
+				    	<c:forEach var = "project" items = "${projectList }">
 				    	<ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
 							<li class="active">
 								<a href="project.do?id=${project.id }"><i class="icon-th"></i>${project.name }</a>

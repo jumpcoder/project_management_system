@@ -1,4 +1,4 @@
-package web;
+package web.contact;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/idea.do")
-public class IdeaServlet extends HttpServlet {
+@WebServlet("/contact.do")
+public class ContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/projects/project/idea/index.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/views/projects/project/contact/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

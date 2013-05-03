@@ -1,4 +1,4 @@
-package web;
+package web.goal;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/file.do")
-public class FileServlet extends HttpServlet {
+@WebServlet("/task.do")
+public class TaskServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/projects/project/file/index.jsp").forward(request, response);
+		int taskId = Integer.parseInt(request.getParameter("id"));
+		
+		request.getRequestDispatcher("WEB-INF/views/projects/project/goal/task/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

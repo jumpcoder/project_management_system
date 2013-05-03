@@ -21,12 +21,7 @@ public class EmployeeService {
 		}
 		return employee;
 	}
-	public static Employee addProjects(Employee employee) {
-		List<Project> projectList = new EmployeeProjectDao().findProjectsByEmployeeId(employee.getId());
-		employee.setProjects(projectList);
-		return employee;
-		
-	}
+
 	
 	public static int mapToEmployeeId(String username){
 		List<Employee> employeeList = new EmployeeDao().findAllEmployee();
