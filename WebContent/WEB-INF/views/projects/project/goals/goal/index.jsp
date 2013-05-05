@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +43,13 @@
 		</div>
 		<div class="span9">
 			
+			
 			<ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
 				<li class="active">
 					<a href="javascript:;"><i class="icon-th"></i>目标1</a>
 				</li>
 				<li style="float:right">
-					<i class="icon-edit"></i><a href="edit_goal.do" class="link-black">编辑</a>
+					<i class="icon-edit"></i><a href="edit_task.do" class="link-black">编辑</a>
 				</li>
 			</ul>
 			<div class="wall">
@@ -57,32 +59,25 @@
 				</div>
 
 				<div class="page-header">
-					<a href="new_task.html" class="btn btn-success"><i class="icon-plus icon-white"></i>添加新任务</a>
+					<a href="create_task.do" class="btn btn-success"><i class="icon-plus icon-white"></i>添加新任务</a>
 				</div>
-
-
 				<dl>
-        			<dt><i class="icon-bookmark"></i><a href="edit_task.html">设计数据库</a>&nbsp;&nbsp;&nbsp;[刘德华]</dt>
-        			<dd>A description list is perfect for defining terms.</dd>
-        			
-        			<div class="progress">
-					  <div class="bar" style="width:0%;"></div>
-					</div>
-
-
-        			<dt style="margin-top:15px"><i class="icon-bookmark"></i><a href="#">写DAO和Services类</a>&nbsp;&nbsp;&nbsp;[金泰熙]</dt>
-        			<dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-        			<div class="progress progress-success">
-					  <div class="bar" style="width:100%;">100%</div>
-					</div>
-
-        			<dt style="margin-top:15px"><i class="icon-bookmark"></i><a href="#">使用TwitterBootStrop重构前端页面</a>&nbsp;&nbsp;&nbsp;[艾莉婕]</dt>
-        			<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-        			<div class="progress">
-					  <div class="bar" style="width:35%;">35%</div>
-					</div>
+					<c:choose>
+						<c:when test = "${empty taskList }">
+							
+						</c:when>
+						<c:otherwise>
+							<c:forEach var = "task" items = "${taskList }">
+							<dt style="margin-top:15px"><i class="icon-bookmark"></i><a href=${task.employeeId == emloyeeId?"edit_task.do" : "#" }>${task.name }</a>&nbsp;&nbsp;&nbsp;[${task.employeeName }]</dt>
+		        			<dd>${task.describle }</dd>
+		        			<div class="progress progress-success">
+							  <div class="bar" style="width:${task.percentage}%;">${task.percentage}%</div>
+							</div>
+							
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
       			</dl>
-
 			</div>
 			
 		</div>

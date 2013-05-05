@@ -28,7 +28,6 @@ public class GoalDao extends Dao<Goal>{
 		} catch (DaoException e) {
 			e.printStackTrace();
 		}
-
 		return null;
 	}
 

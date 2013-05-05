@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.GoalDao;
 import entity.Employee;
 
-import service.GoalService;
 
 
 @WebServlet("/create_goal.do")
@@ -26,7 +26,7 @@ public class CreateGoalServlet extends HttpServlet {
 		String describle = request.getParameter("describle");
 		int employeeId = (Integer)request.getSession().getAttribute("employeeId");
 		int projectId = (Integer)request.getSession().getAttribute("projectId");
-		GoalService.createGoal(name, describle, employeeId, projectId);
+		new GoalDao().addGoal(name, describle, employeeId, projectId);
 		response.sendRedirect("goal.do");
 	}
 

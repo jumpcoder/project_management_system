@@ -9,24 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import service.EmployeeService;
-
 import dao.GoalDao;
-import dao.TaskDao;
 import entity.Goal;
-import entity.Task;
 
 
-@WebServlet("/goal.do")
-public class GoalServlet extends HttpServlet {
+@WebServlet("/goals.do")
+public class GoalsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int goalId = Integer.parseInt(request.getParameter("id"));
-		request.getSession().setAttribute("goalId", goalId);
-		List<Task> taskList = new TaskDao().findTaskByGoalId(goalId);
-		request.setAttribute("taskList", taskList);
-		request.getRequestDispatcher("WEB-INF/views/projects/project/goals/goal/index.jsp").forward(request, response);
+		int projectId = (Integer)request.getSession().getAttribute("projectId");
+		List<Goal> goalList = new GoalDao().findGoalsByProjectId(projectId);
+		request.setAttribute("goalList", goalList);
+		request.getRequestDispatcher("WEB-INF/views/projects/project/goals/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

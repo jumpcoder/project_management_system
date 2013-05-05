@@ -13,7 +13,7 @@ public class TaskServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int taskId = Integer.parseInt(request.getParameter("id"));
-		
+		request.getSession().setAttribute("taskId", taskId);
 		request.getRequestDispatcher("WEB-INF/views/projects/project/goal/task/index.jsp").forward(request, response);
 	}
 

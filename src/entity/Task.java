@@ -6,10 +6,13 @@ public class Task {
 	private String describle;
 	private String state;
 	private String level;
-	private String begin_time;
-	private String end_time;
-	private String create_time;
+	private String beginTime;
+	private String endTime;
+	private String createTime;
 	private int percentage;
+	private int employeeId;
+	private String employeeName;
+
 	public int getId() {
 		return id;
 	}
@@ -40,23 +43,23 @@ public class Task {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	public String getBegin_time() {
-		return begin_time;
+	public String getBeginTime() {
+		return beginTime;
 	}
-	public void setBegin_time(String begin_time) {
-		this.begin_time = begin_time;
+	public void setBeginTime(String beginTime) {
+		this.beginTime = beginTime;
 	}
-	public String getEnd_time() {
-		return end_time;
+	public String getEndTime() {
+		return endTime;
 	}
-	public void setEnd_time(String end_time) {
-		this.end_time = end_time;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
-	public String getCreate_time() {
-		return create_time;
+	public String getCreateTime() {
+		return createTime;
 	}
-	public void setCreate_time(String create_time) {
-		this.create_time = create_time;
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
 	}
 	public int getPercentage() {
 		return percentage;
@@ -64,6 +67,17 @@ public class Task {
 	public void setPercentage(int percentage) {
 		this.percentage = percentage;
 	}
-	
-	
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
 }

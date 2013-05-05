@@ -26,7 +26,7 @@
 						<li class="nav-header">新Apple总部项目</li>
 						<li class="divider"></li>
 						<li class="active"><a href="#"><i class="icon-white icon-home"></i>最新动态</a></li>
-						<li><a href="goal.do"><i class="icon-flag"></i>目标</a></li>
+						<li><a href="goals.do"><i class="icon-flag"></i>目标</a></li>
 						<li><a href="resource.do"><i class="icon-folder-open"></i>资料库</a></li>
 						<li><a href="file.do"><i class="icon-file"></i>文件共享</a></li>
 				  		<li><a href="contact.do"><i class="icon-user"></i>联系人</a></li>

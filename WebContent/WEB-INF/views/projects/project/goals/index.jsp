@@ -56,9 +56,9 @@
 				<c:forEach var = "goal" items = "${goalList }">
 					<ul class="breadcrumb" style="margin-bottom:0px;border-radius: 3px 3px 0 0;margin-top:15px">
 						<li class="active">
-							<a href="task.do?${goal.id }"><i class="icon-th"></i>${goal.name}</a>
+							<a href="goal.do?id=${goal.id }"><i class="icon-th"></i>${goal.name}</a>
 						</li>
-						<li style="float:right"><i class="icon-edit"></i><a href="edit_goal.do" class="link-black">编辑</a></li>
+						<li style="float:right"><i class="icon-edit"></i><a href="edit_goal.do?id=${goal.id} }" class="link-black">编辑</a></li>
 					</ul>
 					<div class="wall">
 						<p>${goal.describle }</p>
